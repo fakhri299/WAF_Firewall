@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: url('https://www.datocms-assets.com/48294/1696925236-image-1-a-web-application-firewall-provides-secure-filtered-http-traffic.png?auto=format') center/cover; /* Set background image properties */
+        }
+
+        .container {
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Set a semi-transparent background color */
+            text-align: center;
+            color: #333; /* Set text color */
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #2196f3; /* Set heading color */
+        }
+
+        p {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        strong {
+            color:red; /* Set strong text color */
+        }
+
+        b {
+            color: #ff5722; /* Set bold text color */
+        }
+
+        .dashboard-link {
+            position: absolute;
+            top: 10px; /* Adjust top position as needed */
+            right: 10px; /* Adjust right position as needed */
+            text-decoration: none;
+            color: #2196f3; /* Set link color */
+        }
+    </style>
+    <title>Attack Information</title>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Attack Information</h2>
+        {% if error_message %}
+            <p>{{ error_message }}</p>
+        {% else %}
+            <p><b>{{ attack_description }}</b></p>
+            <p>Event ID: {{ attack.id }}</p>
+            <p><strong>Malicious Code: {{ attack_name }}</strong></p>
+            <p>IP: {{ attack.ip }}</p>
+            <p>Port: {{ attack.port }}</p>
+            <p>Detection Time: {{ attack.detect_time }}</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>
